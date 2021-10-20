@@ -15,20 +15,30 @@ public class A_Simply_Strange_Sort
 	    while(t-->0)
 	    {
          int n=sc.nextInt();
-         int arr[]=sc.readArray(n);
-         if(isSorted(arr)){
-             System.out.println(0);
-         }
-         else{
-             for(int i=0; i<arr.length-1; i++){
-                 if(i%2==0){
-                     if(arr[i]>arr[i+1]){
-                         swap(arr,i,i+1);
-                     }
-                 }
-                 
-             }
-         }
+         int cnt=0;
+         int a[]=sc.readArray(n);
+         
+        while(isSorted(a)!=true){
+            cnt++;
+            if(cnt%2==0){
+                for(int i=0;i<=n;i++)
+                    if(i%2==0)
+                    {
+                        if(i+1<=n && a[i]>a[i+1]) swap(a[i],a[i+1]);
+                    }
+            }
+            else
+            {
+                for(int i=0;i<=n;i++)
+                {
+                    if(!(i%2==0))
+                    {
+                        if(i+1<=n && a[i]>a[i+1]) swap(a[i],a[i+1]);
+                    }
+                }
+            }
+        }
+        System.out.println(cnt);
          
       
 
@@ -38,6 +48,11 @@ public class A_Simply_Strange_Sort
 	    
 	}
 	
+    static void swap(int a, int b) {
+        int temp=b;
+        b=a;
+        a=temp;
+    }
 	
 	
 	static class FastReader {

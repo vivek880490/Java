@@ -12,6 +12,7 @@ public class A_Arrival_of_the_General
 		
 	    int n=sc.nextInt();
         int arr[]=sc.readArray(n);
+        
         int arr1[]=new int[n];
         for(int i=0;i<n;i++){
             arr1[i]=arr[i];
@@ -35,14 +36,14 @@ public class A_Arrival_of_the_General
             if(arr1[i]==v1){
                 f2=i;
                 break;
-            }
+            }////n%2==0 && n!=2
         }
-        if(n%2==0 && n!=2){
+        if(f2>f1){
             System.out.println((Math.abs(0-f1)+(n-1-f2)));
 
         }
         else{
-            System.out.println((Math.abs(0-f1)+(n-1-f2))-1);
+            System.out.println((Math.abs(0-f1)+(n-1-f2)-1));
 
         }
         //System.out.println(f1+" "+f2);
