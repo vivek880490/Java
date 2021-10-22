@@ -14,11 +14,7 @@ public class C_Ping_pong {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
-            while (a != 0 || b != 0) {
-                a = a - 1;
-                b = b - 1;
-            }
-            System.out.println(a + " " + b);
+            System.out.println((a - 1) + " " + b);
 
         }
 
